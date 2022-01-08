@@ -112,6 +112,14 @@ stat_mode(sal$tag)
 stat_mode(sal$gender)
 stat_mode(sal$otherdetails)
 
+# Frequency of each occurrence
+freq(sal$Race, count=TRUE,pct=TRUE,cumul.count=TRUE,cumul.pct=TRUE,total.name="Total" )
+freq(sal$gender, count=TRUE,pct=TRUE,cumul.count=TRUE,cumul.pct=TRUE,total.name="Total" )
+freq(sal$title, count=TRUE,pct=TRUE,cumul.count=TRUE,cumul.pct=TRUE,total.name="Total" )
+freq(sal$yearsofexperience, count=TRUE,pct=TRUE,cumul.count=TRUE,cumul.pct=TRUE,total.name="Total" )
+freq(sal$yearsatcompany, count=TRUE,pct=TRUE,cumul.count=TRUE,cumul.pct=TRUE,total.name="Total" )
+
+
 # EDA Reports
 eda_paged_report(sal)
 eda_web_report(sal)
@@ -242,9 +250,5 @@ stargazer(Reg_3,Reg_4,type="text",align=TRUE,
 #--------------------------------------------------------
 # Convert Clean data to csv file so we can make dashboard!
 write.csv(sal,"C:\\Users\\miles\\OneDrive\\Desktop\\R Scripts\\R Projects\\sal.csv", row.names = FALSE)
-
-
-
-
 
 
