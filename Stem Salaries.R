@@ -228,7 +228,7 @@ stargazer(reg,reg_2,type="text",align=TRUE,
           digit.separator = "",digits=3)
 
 #----------------------------------------------------------------
-# Does Degree Held and Position Affect Total Yearly Compensation?
+# How does Degree Held and Race Affect Total Yearly Compensation?
 #----------------------------------------------------------------
 Reg_3 <- lm(totalyearlycompensation~Race_Hispanic+Race_Black+Race_Two_Or_More+Race_White+Race_Asian+Race, sal)
 AIC(Reg_3)
