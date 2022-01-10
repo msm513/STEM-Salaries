@@ -214,12 +214,15 @@ new_data <- sal %>%
 reg <- lm(totalyearlycompensation~basesalary+stockgrantvalue+bonus, data = new_data)
 AIC(reg)
 BIC(reg)
+summ(reg) # Output of regression model
 
 # Relation of how salary, stocks, bonus and company affect the total compensation
 reg_2 <- lm(totalyearlycompensation~basesalary+stockgrantvalue+bonus+amazon+microsoft+facebook+google+apple+ibm+uber+capital_one+walmart_labs+linkedin+jpmorgan+netflix+intuit+paypal+booz+data_science, data=new_data)
 AIC(reg_2)
 BIC(reg_2)
-# Output of the Multi-linear regression models
+summ(reg_2) # Output of regression model
+
+# Output to compare the Multi-linear regression models
 stargazer(reg,reg_2,type="text",align=TRUE,
           title="Total Compensation Factors Models",
           dep.var.labels = "Compensation Factors",
@@ -233,10 +236,12 @@ stargazer(reg,reg_2,type="text",align=TRUE,
 Reg_3 <- lm(totalyearlycompensation~Race_Hispanic+Race_Black+Race_Two_Or_More+Race_White+Race_Asian+Race, sal)
 AIC(Reg_3)
 BIC(Reg_3)
+summ(Reg_3)
 
 Reg_4 <- lm(totalyearlycompensation~Masters_Degree+Bachelors_Degree+Doctorate_Degree+Highschool+yearsofexperience+yearsatcompany, sal)
 AIC(Reg_4)
 BIC(Reg_4)
+summ(Reg_4)
 
 stargazer(Reg_3,Reg_4,type="text",align=TRUE,
           title="Total Compensation Factors Models",
